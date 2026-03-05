@@ -73,7 +73,7 @@ function MainContent() {
       <Container maxWidth="sm" sx={{ textAlign: 'center' }}>
         <Box
           component="img"
-          src="/tridents-keep.png"
+          src="tridents-keep.png"
           alt="Trident's Keep by L. A. Woodley — book cover"
           sx={{
             width: '100%',

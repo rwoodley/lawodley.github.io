@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import MenuIcon from '@mui/icons-material/Menu'
 import {
   AppBar,
   Box,
@@ -13,8 +14,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import { useState } from 'react'
 
 function TridentIcon() {
   return (
@@ -163,46 +163,111 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
   )
 }
 
+const BOOK_SECTIONS = ['Overview', 'Bones', 'Richard', 'Camille']
+
 function TridentsKeepPage({ onBack }: { onBack: () => void }) {
+
   return (
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        py: 8,
-      }}
-    >
+    <Box component="main" sx={{ flexGrow: 1, py: 8 }}>
       <Container maxWidth="md">
-        <Button
-          startIcon={<ArrowBackIcon />}
-          onClick={onBack}
-          sx={{ mb: 4 }}
-        >
+        <Button startIcon={<ArrowBackIcon />} onClick={onBack} sx={{ mb: 4 }}>
           Back
         </Button>
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 6, alignItems: 'flex-start' }}>
-          <Box
-            component="img"
-            src="tridents-keep.png"
-            alt="Trident's Keep by L. A. Woodley — book cover"
-            sx={{
-              width: '100%',
-              maxWidth: { xs: '100%', md: 300 },
-              borderRadius: 2,
-              boxShadow: 6,
-              flexShrink: 0,
-            }}
-          />
-          <Box>
-            <Typography variant="h3" component="h1" gutterBottom fontWeight={700}>
+
+        {/* Bordered table layout */}
+        <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
+
+          {/* Title row */}
+          <Box sx={{ p: 2, textAlign: 'center', borderBottom: '1px solid', borderColor: 'divider' }}>
+            <Typography variant="h4" component="h1" fontWeight={700}>
               Trident's Keep
             </Typography>
-            <Typography variant="h6" color="text.secondary" gutterBottom>
-              by L. A. Woodley
-            </Typography>
-            <Typography variant="body1" sx={{ mt: 3 }}>
-              More details about Trident's Keep coming soon.
-            </Typography>
+          </Box>
+
+          {/* Three-column row */}
+          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'stretch', height: { md: 480 } }}>
+
+            {/* Left: thumbnail */}
+            <Box sx={{
+              p: 2,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+              borderRight: { md: '1px solid' },
+              borderBottom: { xs: '1px solid', md: 'none' },
+              borderColor: 'divider',
+              flexShrink: 0,
+            }}>
+              <Box
+                component="img"
+                src="tridents-keep.png"
+                alt="Trident's Keep book cover"
+                sx={{ width: 160, borderRadius: 1, boxShadow: 3 }}
+              />
+            </Box>
+
+            {/* Middle: section navigation */}
+            <Box sx={{
+              borderRight: { md: '1px solid' },
+              borderBottom: { xs: '1px solid', md: 'none' },
+              borderColor: 'divider',
+              flexShrink: 0,
+            }}>
+              <List disablePadding>
+                {BOOK_SECTIONS.map((section) => (
+                  <ListItem key={section} disablePadding>
+                    <ListItemButton
+                      onClick={() => document.getElementById(`section-${section}`)?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      <ListItemText primary={section} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+
+            {/* Right: scrollable content */}
+            <Box sx={{ p: 3, flexGrow: 1, overflowY: { md: 'auto' }, height: { md: '100%' }, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <Box id="section-Overview">
+                <Typography variant="body1">
+                  Trident's Keep is a fantasy adventure following a group of people on a quest for a super-powered trident.
+                </Typography>
+              </Box>
+              <Box id="section-Bones">
+                <Box sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
+                  <Box component="img" src="01.jpg" alt="Bones" sx={{ width: 120, borderRadius: 1, flexShrink: 0 }} />
+                  <Box>
+                    <Typography variant="body1" paragraph>
+                      Bones is a living skeleton, 101 years old, who was ressurected long ago after he died in a burning volcano.
+                    </Typography>
+                    <Typography variant="body1">
+                      A fierce fighter, Bones has the agility of a 30 year old with the wisdom of a century. He's confident, smart, and wields a magic flaming yoyo that is definetly not a children's toy.
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+              <Box id="section-Richard">
+                <Box sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
+                  <Box component="img" src="02.png" alt="Richard" sx={{ width: 120, borderRadius: 1, flexShrink: 0 }} />
+                  <Box>
+                    <Typography variant="body1">
+                      Hailing from the small town of Nokford, Richard is everything your classic warrior is not. Timid, meager, and built like a scarecrow, surely this cannot be the unlikely hero who finds the Ancient Trident.
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+              <Box id="section-Camille">
+                <Box sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>
+                  <Box component="img" src="03.jpg" alt="Camille" sx={{ width: 120, borderRadius: 1, flexShrink: 0 }} />
+                  <Box>
+                    <Typography variant="body1">
+                      Probably the only sane person on the quest for the trident, Camila is the voice of reason in a crew of chattering hobgoblins, raucous pirates, and zealous skeletons. It's a miracle she doesn't have a nervous breakdown by the end, or maybe she does…
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+
           </Box>
         </Box>
       </Container>

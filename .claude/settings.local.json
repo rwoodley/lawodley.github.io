@@ -17,7 +17,8 @@
       "Bash(gh run list --repo rwoodley/lawoodley.github.io --limit 5)",
       "WebFetch(domain:rwoodley.org)",
       "Bash(curl -s https://rwoodley.org/lawoodley.github.io/ 2>&1 | head -20)",
-      "Bash(npm uninstall gh-pages 2>&1 | tail -3)"
+      "Bash(npm uninstall gh-pages 2>&1 | tail -3)",
+      "WebFetch(domain:jenniferegan.com)"
     ]
   }
 }

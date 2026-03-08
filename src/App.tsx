@@ -126,16 +126,10 @@ function Header({ onNav }: { onNav: (page: Page) => void }) {
   )
 }
 
-const WAVE_BG = '#4d6b82'
+const WAVE_BG = '#3c5568'
 
 function MainContent({ onNav }: { onNav: (page: Page) => void }) {
-  const waveRows = [
-    { bottom: 0,   opacity: 0.80 },
-    { bottom: 200, opacity: 0.62 },
-    { bottom: 400, opacity: 0.44 },
-    { bottom: 600, opacity: 0.28 },
-    { bottom: 800, opacity: 0.14 },
-  ]
+  const waveRows = [0, 100, 200, 300, 400]
 
   return (
     <Box
@@ -153,24 +147,36 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
     >
       {/* Wave background layers */}
       <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-        {waveRows.map(({ bottom, opacity }, i) => (
-          <Box
-            key={i}
-            sx={{
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              bottom: `${bottom}px`,
-              height: '400px',
-              backgroundImage: 'url(wave.png)',
-              backgroundRepeat: 'repeat-x',
-              backgroundSize: '420px 400px',
-              backgroundPosition: '0 bottom',
-              opacity,
-              zIndex: waveRows.length - i,
-            }}
-          />
-        ))}
+        {waveRows.map((bottom, i) => {
+          const t = i / (waveRows.length - 1)
+          const brightness = 1.15 - t * 0.36
+          return (
+            <Box
+              key={i}
+              sx={{
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                bottom: `${bottom}px`,
+                height: '200px',
+                backgroundImage: 'url(wave-outline.png), url(wave.png)',
+                backgroundRepeat: 'repeat-x',
+                backgroundSize: '420px 200px',
+                backgroundPosition: '0 bottom',
+                maskImage: 'url(wave.png)',
+                WebkitMaskImage: 'url(wave.png)',
+                maskRepeat: 'repeat-x',
+                WebkitMaskRepeat: 'repeat-x',
+                maskSize: '420px 200px',
+                WebkitMaskSize: '420px 200px',
+                maskPosition: '0 bottom',
+                WebkitMaskPosition: '0 bottom',
+                filter: `brightness(${brightness})`,
+                zIndex: waveRows.length - i,
+              }}
+            />
+          )
+        })}
       </Box>
 
     </Box>

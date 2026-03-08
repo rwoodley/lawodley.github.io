@@ -194,6 +194,40 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
         })}
       </Box>
 
+      <Box sx={{ position: 'relative', zIndex: 10, display: 'flex', gap: 3 }}>
+        {[
+          { label: 'Books',   onClick: () => onNav('tridents-keep') },
+          { label: 'Art',     onClick: undefined },
+          { label: 'Scripts', onClick: () => onNav('scripts') },
+        ].map(({ label, onClick }) => (
+          <Button
+            key={label}
+            variant="outlined"
+            onClick={onClick}
+            sx={{
+              color: '#e0c25c',
+              borderColor: '#e0c25c',
+              backgroundColor: '#374d5e',
+              boxShadow: 'none',
+              textTransform: 'none',
+              fontSize: '1.5rem',
+              fontWeight: 700,
+              letterSpacing: '0.05em',
+              fontFamily: 'inherit',
+              px: 5,
+              py: 1.5,
+              '&:hover': {
+                backgroundColor: '#2d3f4d',
+                borderColor: '#e0c25c',
+                boxShadow: 'none',
+              },
+            }}
+          >
+            {label}
+          </Button>
+        ))}
+      </Box>
+
     </Box>
   )
 }

@@ -14,6 +14,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
+import { keyframes } from '@emotion/react'
 import { useState } from 'react'
 
 function TridentIcon() {
@@ -128,6 +129,20 @@ function Header({ onNav }: { onNav: (page: Page) => void }) {
 
 const WAVE_BG = '#3c5568'
 
+const waveShift = keyframes`
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(21px); }
+`
+
+// Different durations and phase offsets so rows never move in sync
+const WAVE_ANIM = [
+  { duration: '8s',  delay: '0s' },
+  { duration: '11s', delay: '-4s' },
+  { duration: '7s',  delay: '-2s' },
+  { duration: '10s', delay: '-6s' },
+  { duration: '9s',  delay: '-1.5s' },
+]
+
 function MainContent({ onNav }: { onNav: (page: Page) => void }) {
   const waveRows = [0, 100, 200, 300, 400]
 
@@ -168,10 +183,10 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
                 maskRepeat: 'repeat-x',
                 WebkitMaskRepeat: 'repeat-x',
                 maskSize: '420px 200px',
-                WebkitMaskSize: '420px 200px',
                 maskPosition: '0 bottom',
                 WebkitMaskPosition: '0 bottom',
                 filter: `brightness(${brightness})`,
+                animation: `${waveShift} ${WAVE_ANIM[i].duration} ease-in-out ${WAVE_ANIM[i].delay} infinite`,
                 zIndex: waveRows.length - i,
               }}
             />

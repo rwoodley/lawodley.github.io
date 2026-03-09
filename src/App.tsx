@@ -30,7 +30,7 @@ function TridentIcon() {
   )
 }
 
-const NAV_LINKS = ['Books', 'Art', 'Scripts', 'About']
+const NAV_LINKS = ['Books', 'Art', 'Screenplays', 'About']
 
 type Page = 'home' | 'tridents-keep' | 'about' | 'scripts' | 'art'
 
@@ -115,7 +115,7 @@ function Header({ onNav }: { onNav: (page: Page) => void }) {
                 </Box>
               ) : (
                 <ListItem key={text} disablePadding>
-                  <ListItemButton onClick={() => text === 'About' ? handleNav('about') : text === 'Scripts' ? handleNav('scripts') : text === 'Art' ? handleNav('art') : setDrawerOpen(false)}>
+                  <ListItemButton onClick={() => text === 'About' ? handleNav('about') : text === 'Screenplays' ? handleNav('scripts') : text === 'Art' ? handleNav('art') : setDrawerOpen(false)}>
                     <ListItemText primary={text} />
                   </ListItemButton>
                 </ListItem>
@@ -201,7 +201,7 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
         {[
           { label: 'Books',   onClick: () => onNav('tridents-keep') },
           { label: 'Art',     onClick: () => onNav('art') },
-          { label: 'Scripts', onClick: () => onNav('scripts') },
+          { label: 'Screenplays', onClick: () => onNav('scripts') },
         ].map(({ label, onClick }) => (
           <Button
             key={label}
@@ -498,7 +498,7 @@ function ScriptsPage({ onBack }: { onBack: () => void }) {
           Back
         </Button>
         <Typography variant="h3" component="h1" gutterBottom fontWeight={700}>
-          Scripts
+          Screenplays
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <div className="substack-post-embed">

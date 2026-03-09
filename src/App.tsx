@@ -197,10 +197,14 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
         })}
       </Box>
 
-      <Typography sx={{ position: 'absolute', zIndex: 10, top: '10%', left: 0, right: 0, fontSize: '9vw', fontWeight: 600, color: 'rgb(238, 187, 39)', textAlign: 'center' }}>
-        Louis A. Woodley
-      </Typography>
-      <Box sx={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 3 }}>
+      <Box sx={{ position: 'absolute', zIndex: 10, top: '10%', left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
+        <Typography sx={{ fontSize: '9vw', fontWeight: 600, color: 'rgb(238, 187, 39)', textAlign: 'center' }}>
+          Louis A. Woodley
+        </Typography>
+        <Typography sx={{ fontSize: '1.5rem', color: 'rgb(130, 78, 24)', textAlign: 'center', maxWidth: '75%' }}>
+          Louis Woodley is a self-published author, screenwriting, and artist studying Writing for Screen and Television at USC's School of Cinematic Arts. Check out work samples below!
+        </Typography>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 3 }}>
         {[
           { label: 'Books',   onClick: () => onNav('tridents-keep') },
           { label: 'Art',     onClick: () => onNav('art') },
@@ -232,6 +236,7 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
             {label}
           </Button>
         ))}
+        </Box>
       </Box>
 
     </Box>

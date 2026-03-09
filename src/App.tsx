@@ -365,7 +365,31 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
             </Box>
 
             {/* Right: content */}
-            <Box sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+              {/* Header menu */}
+              <Box sx={{ display: 'flex', borderBottom: '1px solid', borderColor: 'divider' }}>
+                {['Overview', 'Characters', 'World', 'Excerpt'].map((label) => (
+                  <Button
+                    key={label}
+                    onClick={() => document.getElementById(`section-${label}`)?.scrollIntoView({ behavior: 'smooth' })}
+                    sx={{
+                      flex: 1,
+                      textTransform: 'none',
+                      borderRadius: 0,
+                      py: 2,
+                      fontSize: { xs: '0.95rem', sm: '1rem' },
+                      fontWeight: 600,
+                      borderRight: '1px solid',
+                      borderColor: 'divider',
+                      '&:last-child': { borderRight: 'none' },
+                    }}
+                  >
+                    {label}
+                  </Button>
+                ))}
+              </Box>
+              {/* Content */}
+              <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 4 }}>
               <Box id="section-Overview">
                 <Typography variant="body1">
                   Trident's Keep is a fantasy adventure following a group of people on a quest for a super-powered trident.
@@ -394,6 +418,7 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
                   </Box>
                 </Box>
               ))}
+              </Box>
             </Box>
 
           </Box>

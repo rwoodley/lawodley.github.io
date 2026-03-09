@@ -589,7 +589,22 @@ function AboutPage({ onBack }: { onBack: () => void }) {
   )
 }
 
+const NRPLIGNS = [
+  'Bolttail', 'Dromeostodon', 'Flowt', 'Fondle Fish',
+  'Gollug', 'Lilly Paddler', 'Milah Goat', 'Ozodisk',
+  'Scrapbat', 'Sheeverload', 'Smogskrene', 'Spindelite',
+  'Swingtrap', 'Ventstrich', 'Vrognot', 'Waxelite',
+]
+
 function ArtPage({ onBack }: { onBack: () => void }) {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  const expandedPoster = expandedIndex !== null
+    ? { src: `nrpligns/${NRPLIGNS[expandedIndex]}.png`, text: '' }
+    : null
+  const handlePrev = () => setExpandedIndex(i => i !== null ? (i - 1 + NRPLIGNS.length) % NRPLIGNS.length : null)
+  const handleNext = () => setExpandedIndex(i => i !== null ? (i + 1) % NRPLIGNS.length : null)
+
   return (
     <Box component="main" sx={{ flexGrow: 1, py: 8 }}>
       <Container maxWidth="md">
@@ -599,10 +614,25 @@ function ArtPage({ onBack }: { onBack: () => void }) {
         <Typography variant="h3" component="h1" gutterBottom fontWeight={700}>
           Art
         </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Coming soon.
-        </Typography>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1 }}>
+          {NRPLIGNS.map((name, index) => (
+            <Box
+              key={name}
+              component="img"
+              src={`nrpligns/thumbnails/${name}_thumb.png`}
+              alt={name}
+              onClick={() => setExpandedIndex(index)}
+              sx={{ width: '100%', aspectRatio: '1', objectFit: 'cover', cursor: 'pointer', borderRadius: 1, '&:hover': { opacity: 0.85 } }}
+            />
+          ))}
+        </Box>
       </Container>
+      <PosterModal
+        poster={expandedPoster}
+        onClose={() => setExpandedIndex(null)}
+        onPrev={handlePrev}
+        onNext={handleNext}
+      />
     </Box>
   )
 }

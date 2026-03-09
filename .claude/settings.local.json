@@ -22,7 +22,10 @@
       "Bash(which convert && convert --version | head -1)",
       "Bash(which python3 && python3 -c \"from PIL import Image; print\\('PIL ok'\\)\")",
       "Bash(ls /Users/robertwoodley/code/lawoodley.github.io/public/wave*)",
-      "WebSearch"
+      "WebSearch",
+      "Read(//private/tmp/**)",
+      "Bash(unzip -p \"/Users/robertwoodley/code/lawoodley.github.io/public/nrpligns/Nrplign Blurbs.docx\" word/document.xml)",
+      "Bash(grep -v '^$')"
     ]
   }
 }

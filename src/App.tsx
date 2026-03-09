@@ -598,9 +598,19 @@ const NRPLIGNS = [
 
 function ArtPage({ onBack }: { onBack: () => void }) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const [texts, setTexts] = useState<Record<string, string>>({})
+
+  useEffect(() => {
+    const base = import.meta.env.BASE_URL
+    NRPLIGNS.forEach((name) => {
+      fetch(`${base}nrpligns/${name}.txt`)
+        .then((r) => r.text())
+        .then((t) => setTexts((prev) => ({ ...prev, [name]: t.trim() })))
+    })
+  }, [])
 
   const expandedPoster = expandedIndex !== null
-    ? { src: `nrpligns/${NRPLIGNS[expandedIndex]}.png`, text: '' }
+    ? { src: `nrpligns/${NRPLIGNS[expandedIndex]}.png`, text: texts[NRPLIGNS[expandedIndex]] ?? '' }
     : null
   const handlePrev = () => setExpandedIndex(i => i !== null ? (i - 1 + NRPLIGNS.length) % NRPLIGNS.length : null)
   const handleNext = () => setExpandedIndex(i => i !== null ? (i + 1) % NRPLIGNS.length : null)

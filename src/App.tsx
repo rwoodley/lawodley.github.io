@@ -492,12 +492,12 @@ function ScriptsPage({ onBack }: { onBack: () => void }) {
   }, [])
 
   return (
-    <Box component="main" sx={{ flexGrow: 1, py: 8 }}>
+    <Box component="main" sx={{ flexGrow: 1, py: 8, bgcolor: 'rgb(239, 218, 134)' }}>
       <Container maxWidth="md">
         <Button startIcon={<ArrowBackIcon />} onClick={onBack} sx={{ mb: 4 }}>
           Back
         </Button>
-        <Typography variant="h3" component="h1" gutterBottom fontWeight={700}>
+        <Typography variant="h3" component="h1" gutterBottom fontWeight={700} sx={{ color: 'rgb(205, 79, 65)' }}>
           Screenplays
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>

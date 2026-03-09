@@ -132,7 +132,7 @@ const WAVE_BG = '#3c5568'
 
 const waveShift = keyframes`
   0%, 100% { transform: translateX(0); }
-  50%       { transform: translateX(21px); }
+  50%       { transform: translateX(42px); }
 `
 
 // Different durations and phase offsets so rows never move in sync
@@ -173,19 +173,19 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
               key={i}
               sx={{
                 position: 'absolute',
-                left: -42,
-                right: -42,
+                left: -84,
+                right: -84,
                 bottom: `${bottom}px`,
                 height: '200px',
                 backgroundImage: 'url(wave-outline.png), url(wave.png)',
                 backgroundRepeat: 'repeat-x',
-                backgroundSize: '420px 200px',
+                backgroundSize: '840px 200px',
                 backgroundPosition: '0 bottom',
                 maskImage: 'url(wave.png)',
                 WebkitMaskImage: 'url(wave.png)',
                 maskRepeat: 'repeat-x',
                 WebkitMaskRepeat: 'repeat-x',
-                maskSize: '420px 200px',
+                maskSize: '840px 200px',
                 maskPosition: '0 bottom',
                 WebkitMaskPosition: '0 bottom',
                 filter: `brightness(${brightness})`,

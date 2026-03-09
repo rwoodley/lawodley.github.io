@@ -465,6 +465,13 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
               </Box>
               {/* Content */}
               <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {activeTab === 'Excerpt' && (
+                <Box
+                  component="iframe"
+                  src={`${import.meta.env.BASE_URL}Excerpt.pdf`}
+                  sx={{ width: '100%', height: '70vh', border: 'none' }}
+                />
+              )}
               {activeTab === 'Overview' && (
                 <Typography variant="body1">
                   Trident's Keep is a fantasy adventure following a group of people on a quest for a super-powered trident.

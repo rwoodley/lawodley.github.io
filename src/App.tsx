@@ -326,14 +326,14 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
   }, [])
 
   return (
-    <Box component="main" sx={{ flexGrow: 1, py: 8 }}>
+    <Box component="main" sx={{ flexGrow: 1, py: 8, bgcolor: 'rgb(174, 203, 216)' }}>
       <Container maxWidth="md">
         <Button startIcon={<ArrowBackIcon />} onClick={onBack} sx={{ mb: 4 }}>
           Back
         </Button>
 
         {/* Bordered table layout */}
-        <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
+        <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'white' }}>
 
           {/* Title row */}
           <Box sx={{ p: 2, textAlign: 'center', borderBottom: '1px solid', borderColor: 'divider' }}>

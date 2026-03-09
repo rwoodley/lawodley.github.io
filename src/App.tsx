@@ -317,6 +317,12 @@ function PosterModal({ poster, onClose }: { poster: PosterInfo | null; onClose: 
 function TridentsKeepPage({ onBack }: { onBack: () => void }) {
   const [texts, setTexts] = useState<Record<string, string>>({})
   const [expandedPoster, setExpandedPoster] = useState<PosterInfo | null>(null)
+  const [activeTab, setActiveTab] = useState(() => localStorage.getItem('tridents-keep-tab') ?? 'Overview')
+
+  const handleTabChange = (label: string) => {
+    setActiveTab(label)
+    localStorage.setItem('tridents-keep-tab', label)
+  }
 
   useEffect(() => {
     const base = import.meta.env.BASE_URL
@@ -374,7 +380,7 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
                 {['Overview', 'Characters', 'World', 'Excerpt'].map((label) => (
                   <Button
                     key={label}
-                    onClick={() => document.getElementById(`section-${label}`)?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => handleTabChange(label)}
                     sx={{
                       flex: 1,
                       textTransform: 'none',
@@ -385,20 +391,22 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
                       borderRight: '1px solid',
                       borderColor: 'divider',
                       '&:last-child': { borderRight: 'none' },
+                      borderBottom: activeTab === label ? '3px solid' : '3px solid transparent',
+                      borderBottomColor: activeTab === label ? 'primary.main' : 'transparent',
                     }}
-ww                  >
+                  >
                     {label}
                   </Button>
                 ))}
               </Box>
               {/* Content */}
               <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <Box id="section-Overview">
+              {activeTab === 'Overview' && (
                 <Typography variant="body1">
                   Trident's Keep is a fantasy adventure following a group of people on a quest for a super-powered trident.
                 </Typography>
-              </Box>
-              {[
+              )}
+              {activeTab === 'Characters' && [
                 { id: 'Bones',     src: 'Bones_Poster.jpeg',     textKey: 'Bones' },
                 { id: 'Richard',   src: 'Richard_Poster.jpeg',   textKey: 'Richard' },
                 { id: 'Camille',   src: 'Camila_Poster.jpeg',    textKey: 'Camila' },

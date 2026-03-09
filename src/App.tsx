@@ -142,10 +142,13 @@ const WAVE_ANIM = [
   { duration: '7s',  delay: '-2s' },
   { duration: '10s', delay: '-6s' },
   { duration: '9s',  delay: '-1.5s' },
+  { duration: '12s', delay: '-3s' },
+  { duration: '8.5s', delay: '-5s' },
+  { duration: '10.5s', delay: '-2.5s' },
 ]
 
 function MainContent({ onNav }: { onNav: (page: Page) => void }) {
-  const waveRows = [0, 100, 200, 300, 400]
+  const waveRows = [0, 100, 200, 300, 400, 500, 600, 700]
 
   return (
     <Box
@@ -164,8 +167,8 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
     >
       {/* Wave background layers */}
       <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-        {/* White overlay to fade waves */}
-        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(255,255,255,0.6)', zIndex: 6 }} />
+        {/* White overlay — zIndex above all wave rows */}
+        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(255,255,255,0.6)', zIndex: 9 }} />
         {waveRows.map((bottom, i) => {
           const t = i / (waveRows.length - 1)
           const brightness = 1.15 - t * 0.36

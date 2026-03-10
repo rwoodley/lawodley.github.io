@@ -301,8 +301,9 @@ function PosterModal({ poster, onClose, onPrev, onNext }: {
             maxHeight: '90vh',
             overflowY: 'auto',
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            flexDirection: { xs: 'column', sm: 'row' },
+            alignItems: { xs: 'center', sm: 'flex-start' },
+            gap: 2,
           }}
         >
           <Box
@@ -310,23 +311,24 @@ function PosterModal({ poster, onClose, onPrev, onNext }: {
             src={poster?.src}
             onClick={onClose}
             sx={{
-              maxWidth: '100%',
-              maxHeight: '75vh',
+              maxWidth: { xs: '100%', sm: '55vw' },
+              maxHeight: '85vh',
               objectFit: 'contain',
               borderRadius: 2,
               display: 'block',
               cursor: 'pointer',
+              flexShrink: 0,
             }}
           />
           {(poster?.title || poster?.text) && (
             <Box
               sx={{
-                mt: 2,
                 px: 2,
                 py: 1,
                 bgcolor: 'rgba(0,0,0,0.6)',
                 borderRadius: 1,
-                maxWidth: 600,
+                maxWidth: { xs: 600, sm: '30vw' },
+                alignSelf: { xs: 'auto', sm: 'center' },
               }}
             >
               {poster.title && (
@@ -335,7 +337,7 @@ function PosterModal({ poster, onClose, onPrev, onNext }: {
                 </Typography>
               )}
               {poster.text && (
-                <Typography variant="body2" color="white" sx={{ whiteSpace: 'pre-wrap', textAlign: 'center' }}>
+                <Typography variant="body2" color="white" sx={{ whiteSpace: 'pre-wrap', textAlign: 'left' }}>
                   {poster.text}
                 </Typography>
               )}

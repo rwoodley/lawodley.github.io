@@ -392,6 +392,7 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
 
   useEffect(() => {
     const base = import.meta.env.BASE_URL
+    fetch(`${base}overview.txt`).then((r) => r.text()).then((t) => setTexts((prev) => ({ ...prev, overview: t.trim() })))
     const charFiles = ['Bones', 'Richard', 'Camila', 'Fred', 'Korbalg', 'Piper', 'Riyah', 'Smashfist']
     charFiles.forEach((name) => {
       fetch(`${base}TridentsKeep/characters/${name}.txt`)
@@ -479,8 +480,8 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
                 />
               )}
               {activeTab === 'Overview' && (
-                <Typography variant="body1">
-                  Trident's Keep is a fantasy adventure following a group of people on a quest for a super-powered trident.
+                <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap' }}>
+                  {texts['overview']}
                 </Typography>
               )}
               {activeTab === 'Characters' && CHARACTERS.map(({ id, src, textKey }, index) => (

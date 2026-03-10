@@ -287,7 +287,7 @@ function PosterModal({ poster, onClose, onPrev, onNext }: {
         {/* Prev arrow */}
         <IconButton
           onClick={(e) => { e.stopPropagation(); onPrev() }}
-          sx={{ position: 'fixed', left: 16, color: 'white', bgcolor: 'rgba(0,0,0,0.4)', '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' } }}
+          sx={{ position: 'fixed', left: 16, zIndex: 10, color: 'white', bgcolor: 'rgba(0,0,0,0.4)', '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' } }}
         >
           <ArrowBackIcon />
         </IconButton>
@@ -345,7 +345,7 @@ function PosterModal({ poster, onClose, onPrev, onNext }: {
         {/* Next arrow */}
         <IconButton
           onClick={(e) => { e.stopPropagation(); onNext() }}
-          sx={{ position: 'fixed', right: 16, color: 'white', bgcolor: 'rgba(0,0,0,0.4)', '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' } }}
+          sx={{ position: 'fixed', right: 16, zIndex: 10, color: 'white', bgcolor: 'rgba(0,0,0,0.4)', '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' } }}
         >
           <ArrowForwardIcon />
         </IconButton>

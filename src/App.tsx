@@ -202,19 +202,19 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
         })}
       </Box>
 
-      <Box sx={{ position: 'absolute', zIndex: 10, top: '10%', left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
+      <Box sx={{ position: 'absolute', zIndex: 10, top: '10%', left: { xs: '5%', sm: 0 }, right: { xs: '5%', sm: 0 }, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
         <Box sx={{ position: 'relative', display: 'inline-block' }}>
-          <Typography sx={{ position: 'absolute', top: '0.08em', left: '0.08em', fontSize: '9vw', fontWeight: 600, color: 'rgb(209, 116, 30)', textAlign: 'center', whiteSpace: 'nowrap', userSelect: 'none' }}>
+          <Typography sx={{ position: 'absolute', top: '0.08em', left: '0.08em', width: '100%', fontSize: '9vw', fontWeight: 600, color: 'rgb(209, 116, 30)', textAlign: 'center', whiteSpace: { xs: 'normal', sm: 'nowrap' }, userSelect: 'none' }}>
             Louis A. Woodley
           </Typography>
-          <Typography sx={{ position: 'relative', fontSize: '9vw', fontWeight: 600, color: 'rgb(238, 187, 39)', textAlign: 'center', whiteSpace: 'nowrap' }}>
+          <Typography sx={{ position: 'relative', fontSize: '9vw', fontWeight: 600, color: 'rgb(238, 187, 39)', textAlign: 'center', whiteSpace: { xs: 'normal', sm: 'nowrap' } }}>
             Louis A. Woodley
           </Typography>
         </Box>
-        <Typography sx={{ fontSize: '1.5rem', color: 'rgb(230, 78, 24)', textAlign: 'center', maxWidth: '75%' }}>
+        <Typography sx={{ fontSize: '1.5rem', color: 'rgb(230, 78, 24)', textAlign: 'center', maxWidth: { xs: '100%', sm: '75%' } }}>
           Louis Woodley is a self-published author, screenwriting, and artist studying Writing for Screen and Television at USC's School of Cinematic Arts. Check out work samples below!
         </Typography>
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 3 }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 3, width: { xs: '100%', sm: 'auto' } }}>
         {[
           { label: 'Books',   onClick: () => onNav('tridents-keep') },
           { label: 'Art',     onClick: () => onNav('art') },
@@ -236,6 +236,7 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
               fontFamily: 'inherit',
               px: 5,
               py: 1.5,
+              width: { xs: '100%', sm: 'auto' },
               '&:hover': {
                 backgroundColor: 'rgb(38, 61, 100)',
                 borderColor: 'rgb(238, 187, 39)',

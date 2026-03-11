@@ -169,7 +169,7 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
       {/* Wave background layers */}
       <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
         {/* White overlay — zIndex above all wave rows */}
-        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(255,255,255,0.6)', zIndex: 9 }} />
+        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(255,255,255,0.8)', zIndex: 9 }} />
         {waveRows.map((bottom, i) => {
           const t = i / (waveRows.length - 1)
           const brightness = 1.15 - t * 0.36

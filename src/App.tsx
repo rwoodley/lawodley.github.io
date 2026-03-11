@@ -212,7 +212,7 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
           </Typography>
         </Box>
         <Typography sx={{ fontSize: '1.5rem', color: 'rgb(230, 78, 24)', textAlign: 'center', maxWidth: { xs: '100%', sm: '75%' } }}>
-          Louis Woodley is a self-published author, screenwriter, and artist studying Writing for Screen and Television at USC's School of Cinematic Arts. Check out work samples below!
+          Louis Woodley is a self-published author, screenwriter, and artist studying <Box component="span" sx={{ fontStyle: 'italic', color: 'rgb(160, 40, 10)' }}>Writing for Screen and Television</Box> at <Box component="span" sx={{ fontStyle: 'italic', color: 'rgb(160, 40, 10)' }}>USC's School of Cinematic Arts</Box>. Check out work samples below!
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 3, width: { xs: '100%', sm: 'auto' } }}>
         {[

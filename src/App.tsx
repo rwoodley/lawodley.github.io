@@ -502,11 +502,108 @@ function TridentsKeepPage({ onBack }: { onBack: () => void }) {
               {/* Content */}
               <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 4 }}>
               {activeTab === 'Excerpt' && (
-                <Box
-                  component="iframe"
-                  src={`${import.meta.env.BASE_URL}Excerpt.pdf`}
-                  sx={{ width: '100%', height: '70vh', border: 'none' }}
-                />
+                <Box sx={{ maxWidth: 720, mx: 'auto', fontFamily: 'Georgia, serif', fontSize: '1rem', lineHeight: 1.8, color: '#222' }}>
+                  <Typography variant="h5" fontWeight={700} sx={{ mb: 3, textAlign: 'center', fontFamily: 'Georgia, serif' }}>
+                    Chapter One: The Wyvern Egg
+                  </Typography>
+                  {[
+                    `It was a pleasant spring day. The hot sun blazed in the sky, but there was a cool breeze, and the trees cast a gentle shadow over the forest floor, balancing with the heat and creating a comfortable temperature. The trees, all cherry blossoms, were just starting to bud, and the branches were covered in hundreds of small, white and pink flowers. The ground was littered in flower petals, which would flutter a few inches off the ground whenever somebody took a step, as if they were walking through shallow water.`,
+                    `Richard, Fred, and Camila sat on a branch of an old willow tree at the edge of a small clearing, peering down at a wyvern's nest, which sat partially hidden inside a hollow on the tree trunk. Within the nest were three, pearly pink eggs, each one about 30 centimeters in diameter. The wyvern itself was nowhere to be seen, but a nesting wyvern never strayed far from its eggs.`,
+                    `The trio planned to steal one of the eggs. Wyvern eggs were a rare delicacy; the creatures only nested once in their life and hid their nests quite well. If everything went to plan, the group would be eating a wyvern omelet tonight, a meal they might never get again. Unfortunately, this group was prone to accidents.`,
+                    `Richard was the most reserved. Contrary to his friends, he didn't wish to live a life of adventure and awe. He was quite happy with his current situation, living in the small town of Nokford and doing odd jobs for money. He didn't have many plans in life other than taking over his mom's shop once he turned 18, an event only a few months away. His situation was simple, safe, and relatively cut off from the wider world, just the way he wanted it.`,
+                    `Fred was the engine behind the group. To him, life in Nokford was monotonous, so he made it his mission to undertake a new venture every day, dragging his friends along with him. Stealing a wyvern egg was his idea, of course. Fred had bright orange hair, pushed back with a pair of aviator goggles. He wore colorful clothes, and had a cheap, wooden sheath strapped to his belt in case he ever obtained a blade.`,
+                    `Camila was the brains of the group. Whenever Fred became too roused or reckless, Camila would reel him in. If Richard panicked, she would rationalize the situation with him. She was the smartest of the three, and admittedly, most of the time she was right. However, she had a tendency to insist she was right, even when she wasn't. Once she had made up her mind about something, it was impossible to convince her otherwise. She and Fred were dating, and had been for 3 years. Although she didn't share Fred's dreams of exploration and adventure, she too hoped to one day leave Nokford. There was a world out there that she wanted to see, and being stuck in the smallest, most irrelevant town east of the desert nations had gotten old.`,
+                    `"I don't want to do this," Richard said.`,
+                    `"You never want to do anything," Fred replied.`,
+                    `"Wyverns breathe fire! We aren't fireproof! Do third degree burns sound fun to you guys?" Richard responded. "They're especially easy to annoy during the mating season, which is right now, in case you forgot."`,
+                    `"Richard, relax, the wyvern isn't here right now," Camila reasoned. "We'll take one egg, and then leave. Nothing bad will happen."`,
+                    `"Never heard those words before," Richard muttered. Fred hopped from the tree branch, kicking up a cloud of flower petals when he landed on the ground. Camila followed. Richard climbed down with caution, but halfway through he slipped on a branch, lost his balance, and tumbled to the ground. He got to his feet and brushed himself off before joining the other two.`,
+                    `"It's been about 10 minutes since the wyvern was last here, so she shouldn't be coming back anytime soon," Fred said. "Everybody wearing their gloves?" Camila nodded. Richard hurried to put his on. Wyvern eggs were known to be quite hot. While not as hot as dragon eggs, which couldn't be touched even with gloves, they would still burn your hand without protection.`,
+                    `"Ok, I'll go grab the egg," Fred explained. "Camila, you stand behind me in case I drop it. Richard, you are the look out. Let us know if the wyvern comes back." Fred had a way of speaking in which he delivered everything with a tone of grandeur and importance.`,
+                    `"It's not like me warning you is going to do any good," Richard responded. "The brush is pretty thick. I won't see the wyvern until it enters the clearing." Fred looked around at the surrounding forest. Aside from the path they took to get here, the rest of the forest floor was covered in bushes and small trees.`,
+                    `"Fair enough," Fred replied. "Well, if you see something suspicious or hear something that sounds like a wyvern, let me know."`,
+                    `"What does a Wyvern sound like?" Richard whispered to Camila.`,
+                    `"Um, like a chirping, screeching sort of thing," she responded. "Like a squirrel and a coyote had a baby that could fly and breathe fire."`,
+                    `Fred climbed up to the hollow in the tree, balancing on a branch as he reached in and grabbed one of the eggs. Steam hissed up from his gloves upon contact. If they held the egg for too long, it would burn through the gloves, so they had to take turns. Fred took the egg out of the hollow with care. As he was doing this, his jacket snagged on a sharp piece of wood, pulling back his sleeve and briefly exposing the underside of his wrist. Fred's foot slipped from the branch, and his exposed arm brushed against one of the other eggs. He yelped, tumbling backwards and sliding off the branch, Camila jumped to catch the egg, grabbing it just before it smashed into the ground. Fred landed with a thump, flower petals fluttering into the air.`,
+                    `"Are you ok, Fred?" Richard asked. Fred nodded, immediately hopping back onto his feet and stretching out his back.`,
+                    `"Those eggs are hot," Fred responded, waving his hands. Camila set the egg down, the flower petals around it charring and crumpling.`,
+                    `"Let me see the burn," she said. Fred held out his wrist. Camila inspected the wound, "It's not too bad. I'll get some ointment for it when we get home." Richard picked up the egg, feeling the warmth through his gloves. He rolled it over in his hands a few times. It was lighter than he expected.`,
+                    `Suddenly, Richard heard a low growling. He had been distracted by Fred's fall, and hadn't been paying attention to the surrounding brush. Richard saw a flash of silver in his peripheral vision. He spun around, just in time to see a spiked tail flick into the bushes. Adrenaline began to pump. He felt his heart beat increase. The wyvern was watching them. He didn't know how long it had been there, but it probably wasn't thrilled to see them holding one of its precious eggs.`,
+                    `"Guys, it's here." Richard said, his voice shaky. He tucked the egg under his arm, feeling it burn through his coat's sleeve. Looking around for something to defend himself with, his eyes rested on a sizable stick. He grabbed it and tried to hold it like a sword, not that he knew how to do that.`,
+                    `"Oh wonderful." Camila muttered, rummaging through her bag for anything she could use as a weapon. All she came up with was a hammer. Fred pulled his goggles down over his eyes and stuck out his hands in a fighting stance.`,
+                    `"Alright, on the count of three," Fred said, whispering at the volume of normal speech, "I'm going to—"`,
+                    `The wyvern sprung from the bush! It was a flash of teeth and claws, zipping around the clearing before the group had time to react. The animal was mostly silver, with gold stripes running along its sides. It had a crocodile-like snout, and sharp teeth that stood out awkwardly from its mouth. There was a row of spikes down its back, as well as two large horns, one above each eye. The wyvern wasn't very big, only a meter and a half long, but it could pack a punch. It barrelled into Richard, knocking the wind out of him. He gasped for air, the precious egg falling from his hands and rolling away in a trail of ashy destruction. Camila swung her hammer, missing and tripping on Richard's legs. Fred wildly punched the air, remarkably landing a hit or two as the creature sped by.`,
+                    `Richard crawled towards the egg. Camila sprung up, swinging her hammer around as she got her balance and accidentally clocking the wyvern in the lower jaw. The creature screeched, briefly dipping out of the air.`,
+                    `Fred reached to his sheath to pull out his sword, only he didn't have a sword. Instead, he unclipped the sheath and bonked the wyvern on its head. The animal hissed, turning around and speeding back towards Fred. He swung again, the wood making a dull thunk as it collided with the creature's ribs.`,
+                    `Richard grabbed the egg and scrambled to his feet. There was now a bright orange crack on it, zig-zagging across its pink surface. The wyvern was flying straight at him. He panicked, tossing the egg to Fred.`,
+                    `"Fred!" Richard yelled. Fred looked up, catching the egg just in time before it smacked him in the face. The wyvern had turned to target him now.`,
+                    `"Camila!" Fred shouted, tossing the egg to her. She leaped in the air, snatching the small object just before the wyvern could reach it. Enraged, it dived towards her.`,
+                    `"Richard!" Camila shouted, throwing the egg back to him. Richard fumbled, dropping the egg but grabbing it again just before it reached the ground.`,
+                    `"Fred!" Richard shouted. The game of hot potato continued. "Richard!" "Camila!" "Richard!"`,
+                    `"STOP GIVING IT BACK TO ME!" Richard shouted. He sprinted off down the path, with both his friends and the wyvern in quick succession.`,
+                    `The beast screeched, flames shooting from its mouth and igniting the back of Fred's coat. He dropped to the ground, the wyvern speeding through where his head had been a moment before. Camila threw the hammer, missing spectacularly. The wyvern chased after Richard, who was farther down the path. He could feel the egg burning through his gloves, the warmth quickly turning to pain. He tossed it to Fred, who had thrown his coat on the ground and was stomping out the fire. Fred caught it in one hand, using the other to punch the wyvern out of the way as he ran past Camila down the path. The wyvern turned to chase him, but while it was distracted, Camila hit its side with a tree branch. It spiraled out of the air into a nearby tree, hissing and screeching, but finally backing down.`,
+                    `"Are you ok?" Fred asked Camila, helping her up. "You have a bruise here on your cheek." Camila felt her face.`,
+                    `"I think I'm ok, thank you." Camila replied. She brushed some of the leaves out of Fred's hair. "You're looking a little roughed up."`,
+                    `"I feel great! I can't believe that actually worked!" Fred exclaimed. He thrusted the egg over his head, waving it in the air.`,
+                    `"Neither can I," Richard muttered, who was still perturbed by the whole experience.`,
+                    `"We fought a wyvern! It was fantastic! Oh, they will tell stories of this someday!" Fred exclaimed.`,
+                    `"Tell stories of us fighting that thing?" Camila asked, laughing. "It was the size of our dog and did more damage to us than we did to it."`,
+                    `"Nonsense! Wasn't it heroic when I valiantly punched the beast?" Fred asked. Camila laughed harder.`,
+                    `"You mean when you hit it by accident while doing this?" she asked, frantically waving her hands in the air to mimic him. Fred nodded.`,
+                    `"Yes. Then. I thought it was pretty cool." Fred responded. He was laughing as well now. Even Richard began to chuckle, his fear subsiding.`,
+                    `All of a sudden, the wyvern dived out of the sky, grabbing the egg with its sharp claws. Fred managed to keep his grip on the egg, but he fell flat on his face with the sudden downward momentum. The wyvern struggled to fly away, unable to carry the weight of its egg combined with that of a fully grown human. Camila ran to help, but was kept at bay by the wyvern's fiery breath.`,
+                    `Fred tried to stand, but every time he got to his feet, the wyvern would pull forward, and he would collapse onto his face again.`,
+                    `Richard realized he still had the stick with him from earlier, and in the heat of the moment, chucked it at the wyvern with deadly accuracy. The stick nailed it in the forehead, right between the eyes. The creature screeched, letting go of the egg and finally accepting defeat. Richard watched as it zipped off into the brush. Fred got to his feet, wiping the flower petals off his chest and face. Camila ran over to him.`,
+                    `"Are you ok?" Camila asked. Fred nodded. He had a bloody nose and a few scratches, but looked fine other than that. He ran a hand through his bright, orange hair, removing leaves and dirt.`,
+                    `"Hopefully she's gone for good." Fred said.`,
+                    `"I never want to do this again." Richard replied. He laughed in relief, clutching his stomach where the wyvern had slammed him.`,
+                    `"Ah I was planning to do it again next tuesday, if you are willing." Fred asked. Camila smiled and rolled her eyes. The group began to walk down the path.`,
+                    `"That was an impressive throw, Richard." Camila said, patting his back. "You got her right in the forehead."`,
+                    `"Yes, it was impressive indeed." Fred added. He slung his arm over Richard's shoulder. "I can picture you now, donned in shining armor as you hurl a trident at some ancient beast."`,
+                    `"Well, that's never happening." Richard responded. "Doubt I'll encounter any ancient beasts around here!"`,
+                    `"Hah! I'm sure there is some sort of sea monster lurking in the Ballaster Bay." Fred said. "Something we shall slay! We can mount its head on our wall!" He thrust the sheath into the air. Camila put her hand around his arm.`,
+                    `"Put the sheath away before you hurt somebody," she said. Fred clipped it to his belt.`,
+                    `"I'll get a real sword someday," Fred proclaimed.`,
+                    `"Your mom will never let you," Richard replied.`,
+                    `"I'm 18! She can't control me forever!" Fred exclaimed. He would've thrust his hand into the air again if Camila wasn't holding his arm.`,
+                    `"I don't know if I'm gonna let you get a sword," Camila responded. Fred looked at her with a shocked expression.`,
+                    `"Why?! I can't be a warrior without a sword!" Fred exclaimed.`,
+                    `"No offense, but I don't entirely trust you with a real weapon."`,
+                    `"I would never hurt you."`,
+                    `"I'm more worried you'll hurt yourself." Camila said. Fred considered this. "Besides, we are NOT going on some epic quest when we leave. We've been over this."`,
+                    `"You guys are leaving?" Richard asked. "Are you going on a trip somewhere?" Camila looked surprised, not realizing she had let this information slip. She turned to Fred.`,
+                    `"I fear it's time to break the news." Camila said. Fred nodded his head in acceptance.`,
+                    `"What news?" Richard asked. He took out a small token from his pocket and began to fiddle with it. "What news are you breaking?"`,
+                    `"We have decided…that we will be leaving Nokford." Camila said slowly. Richard felt a pit forming in his stomach.`,
+                    `"What? You…you can't just leave Nokford!" Richard replied, forcing laughter in an attempt to delegitimize their idea. "I mean, where would you even go?!"`,
+                    `"North, to the capital." Fred said.`,
+                    `"Where the war is?" Richard replied. He spun the token faster in his fingers.`,
+                    `"The war isn't in Deepland, it's in Knavia!"`,
+                    `"Well the Deepland capital is a lot closer to Knavia than we are. What if they cross the Land Bridge? Then what?"`,
+                    `"Richard—" Camila interjected.`,
+                    `"We are winning the war! Deepland is winning! What are you so worried about?" Fred exclaimed. Richard felt anger bubbling up in his gut.`,
+                    `"This is not—not at all what—" Richard stuttered, struggling to find what he wanted to say. "I just think it's an unsafe idea. Not a smart idea at all."`,
+                    `"It is safer to be in a walled, heavily guarded city, protected by a dragon mind you, than to be out here in Nokford, a town with an old wall, no protection, and definitely no dragon." Camila said in a tone which implied her words were verified facts.`,
+                    `"No it's not!" Richard replied, waving his hands in front of him.`,
+                    `"It totally is." Fred added.`,
+                    `"If Knavia invades, they're not going to attack us! Our town will go overlooked! It would be months before they even realized we're here!" Richard argued. "But they'll go straight to the capital first! If they invade, that's the number one target! We're safe here!"`,
+                    `"What is an invading army going to do against a dragon!?" Fred exclaimed. Camila pinched her brow while the two shouted at each other.`,
+                    `"Ok, quiet, I don't want to hear this anymore." She said, "Richard, we've made up our minds. We're adults and we want to see the world."`,
+                    `"That'd be fine if the world wasn't at war." Richard replied. Camila sighed. Fred had begun kicking a stone in front of him as they walked. It was silent for a moment. Pink petals drifted down from the trees.`,
+                    `"Were you not going to tell me?" Richard asked, hurt. The token spun faster in his hand.`,
+                    `"We were going to tell you, but we thought it would be best to wait for the right time." Camila replied. Richard rolled his eyes.`,
+                    `"When do you leave?" he asked, hoping the answer would be "never" so the day could return to normal.`,
+                    `"Not for a while." Camila said. "We'll be here for a few weeks after your birthday, and then we'll probably head out."`,
+                    `"And don't you worry, we will visit ALL the time!" Fred added, slinging his arm back over Richard's shoulder and jostling him. "Now who wants to take this egg, it's burning through my gloves." Camila grabbed it from him.`,
+                    `Richard did not feel much better, despite Fred's reassurances. They wouldn't need to "visit all the time" if they never left. Unfortunately, Richard realized it was futile to try and convince them. Camila had made up her mind and once Fred got a taste of adventure he would never let it go. Richard pushed all this out of his mind, deciding that it was far away, and he could simply just pretend it wasn't happening and his friends weren't leaving until he had to. His mind drifted back to the task at hand.`,
+                    `"How are we going to cook this?" Camila asked, holding up the egg.`,
+                    `"I'm sure my mom knows how," Richard replied.`,
+                  ].map((para, i) => (
+                    <Typography key={i} sx={{ mb: 2, fontFamily: 'Georgia, serif', fontSize: '1rem', lineHeight: 1.8, textIndent: '2em' }}>
+                      {para}
+                    </Typography>
+                  ))}
+                </Box>
               )}
               {activeTab === 'Overview' && (
                 <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap' }}>

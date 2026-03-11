@@ -26,7 +26,10 @@
       "Read(//private/tmp/**)",
       "Bash(unzip -p \"/Users/robertwoodley/code/lawoodley.github.io/public/nrpligns/Nrplign Blurbs.docx\" word/document.xml)",
       "Bash(grep -v '^$')",
-      "Bash(ls /Users/robertwoodley/code/lawoodley.github.io/public/trident*.* 2>/dev/null || ls /Users/robertwoodley/code/lawoodley.github.io/public/ | grep -i trident)"
+      "Bash(ls /Users/robertwoodley/code/lawoodley.github.io/public/trident*.* 2>/dev/null || ls /Users/robertwoodley/code/lawoodley.github.io/public/ | grep -i trident)",
+      "Bash(cd /Users/robertwoodley/code/lawoodley.github.io/public && pdftotext Excerpt.pdf -)",
+      "Bash(pip3 install pypdf -q && python3 -c \"import pypdf; r = pypdf.PdfReader\\('/Users/robertwoodley/code/lawoodley.github.io/public/Excerpt.pdf'\\); [print\\(p.extract_text\\(\\)\\) for p in r.pages]\")",
+      "Bash(python3 -m venv /tmp/pdfvenv && /tmp/pdfvenv/bin/pip install pypdf -q && /tmp/pdfvenv/bin/python3 -c \"import pypdf; r = pypdf.PdfReader\\('/Users/robertwoodley/code/lawoodley.github.io/public/Excerpt.pdf'\\); [print\\(p.extract_text\\(\\)\\) for p in r.pages]\")"
     ]
   }
 }

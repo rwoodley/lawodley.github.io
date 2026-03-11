@@ -248,10 +248,9 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
           </Button>
         ))}
         </Box>
-      </Box>
 
-      {/* Social chiclets */}
-      <Box sx={{ position: 'absolute', bottom: 16, left: 0, right: 0, zIndex: 10, display: 'flex', justifyContent: 'center', gap: 2 }}>
+        {/* Social chiclets */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
         <IconButton
           component="a"
           href="https://www.instagram.com/louis_woodley_06"
@@ -274,6 +273,7 @@ function MainContent({ onNav }: { onNav: (page: Page) => void }) {
             <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
         </IconButton>
+        </Box>
       </Box>
 
     </Box>
